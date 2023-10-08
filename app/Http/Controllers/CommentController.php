@@ -32,7 +32,12 @@ class CommentController extends Controller
      */
     public function store(StoreCommentRequest $request)
     {
-        $comment = Comment::create($request->all());
+        $comment = new Comment();
+        $comment->description = $request->description;
+        $comment->user_id = $request->user_id;
+        $comment->gallery_id = $request->gallery_id;
+        $comment->save();
+        return $comment; 
     }
 
     /**

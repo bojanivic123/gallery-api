@@ -24,7 +24,7 @@ class UpdateCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            "description" => "max:1000"
+            "description" => "max:1000|string"
         ];
     }
 }
