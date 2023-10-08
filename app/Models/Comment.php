@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    use HasFactory;
-    protected $fillable = ["description", "user_id", "gallery_id"]; 
+    use HasFactory; 
 
     public function gallery() {
         return $this->belongsTo(Gallery::class);
@@ -18,3 +17,4 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     } 
 }
+

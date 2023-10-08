@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth:api")->only(["store", "update", "destroy"]);  
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +24,7 @@ class GalleryController extends Controller
         $query = Gallery::query();
 
         if ($name) {
-            $query->search($name);
+            $query->searchByName($name); 
         }
 
         $galleries = $query->with("user")->orderBy("created_at", "DESC")->paginate(10);
