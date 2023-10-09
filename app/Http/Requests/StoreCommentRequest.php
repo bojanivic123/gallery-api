@@ -24,8 +24,10 @@ class StoreCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            "description" => "required|max:1000|string"
-        ]; 
+            "description" => "required|max:1000",
+            "user_id" => "required|exists:users,id",
+            "gallery_id" => "required|exists:galleries,id"
+        ];  
     }
 }
 
