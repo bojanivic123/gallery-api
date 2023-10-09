@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->longText("description");
+            $table->longText("description")->nullable(); 
             $table->longText("urls");
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade"); 
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 
