@@ -26,8 +26,7 @@ class StoreGalleryRequest extends FormRequest
         return [
             "name" => "required|min:2|max:255|string",
             "description" => "max:1000|string",
-            "urls" => "required|array|min:1",
-            "urls.*" => "url|regex:/\.(png|jpg|jpeg)$/i", 
+            "urls" => "required|array|min:1", 
             "user_id" => "required|exists:users,id"  
         ]; 
     }
