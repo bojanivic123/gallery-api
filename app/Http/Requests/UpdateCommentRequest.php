@@ -13,7 +13,7 @@ class UpdateCommentRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; 
+        return false; 
     }
 
     /**
@@ -24,7 +24,7 @@ class UpdateCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            "description" => "max:1000|string"
+            // 
         ];
     }
 }
