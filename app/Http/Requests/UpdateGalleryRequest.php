@@ -25,7 +25,9 @@ class UpdateGalleryRequest extends FormRequest
     {
         return [
             "name" => "min:2|max:255|string",
-            "description" => "max:1000"
-        ]; 
+            "description" => "max:1000|string",
+            "urls" => "required|array|min:1",
+            "urls.*" => "url|regex:/\.(png|jpg|jpeg)$/i"
+        ];  
     }
 }

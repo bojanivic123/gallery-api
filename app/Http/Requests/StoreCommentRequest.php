@@ -25,9 +25,8 @@ class StoreCommentRequest extends FormRequest
     {
         return [
             "description" => "required|max:1000",
-            "user_id" => "required|exists:users,id",
             "gallery_id" => "required|exists:galleries,id"
-        ];  
+        ];   
     }
 }
 
