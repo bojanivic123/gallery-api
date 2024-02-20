@@ -1,6 +1,5 @@
-●	Klonirati projekat sa kandidatovog repo-a
-○	Git clone
 
+○	Git clone
 ●	Preko terminala pozicionirati se u folder novog foldera
 ●	Pokrenuti composer  install (mozda ce biti potreban sudo prefiks)
 ●	Pokrenuti npm install
